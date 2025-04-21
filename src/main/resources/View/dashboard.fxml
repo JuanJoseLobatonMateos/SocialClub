@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.mfxcomponents.controls.buttons.MFXIconButton?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane minWidth="-Infinity" prefHeight="838.0" prefWidth="1119.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.DashboardController">
+    <Pane layoutX="859.0" layoutY="34.0" prefHeight="82.0" prefWidth="227.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+        <Label fx:id="lblHora" layoutX="23.0" layoutY="17.0" prefHeight="48.0" prefWidth="181.0" style="-fx-font-size: 24px; -fx-text-fill: black; -fx-font-family: 'comic sans'; -fx-alignment: center;" textAlignment="CENTER" textFill="#242323">
+            <font>
+                <Font size="44.0" />
+            </font>
+        </Label>
+    </Pane>
+    <Pane layoutX="37.0" layoutY="34.0" prefHeight="82.0" prefWidth="802.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+        <Label fx:id="lblFecha" layoutX="14.0" layoutY="17.0" prefHeight="48.0" prefWidth="773.0" style="-fx-font-size: 24px; -fx-text-fill: black; -fx-font-family: 'comic sans'; -fx-alignment: center;" textAlignment="CENTER" textFill="#242323">
+            <font>
+                <Font size="44.0" />
+            </font>
+        </Label>
+    </Pane>
+    <Pane layoutX="658.0" layoutY="339.0" prefHeight="356.0" prefWidth="428.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+        <PieChart fx:id="aforo" animated="false" clockwise="false" labelsVisible="false" layoutX="11.0" layoutY="14.0" legendSide="LEFT" prefHeight="328.0" prefWidth="407.0" style="-fx-legend-visible: true;" title="Aforo Piscina" />
+    </Pane>
+    <Pane layoutX="42.0" layoutY="135.0" prefHeight="178.0" prefWidth="1045.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+        <HBox fx:id="climaPorHorasContainer" layoutX="11.0" layoutY="52.0" prefHeight="115.0" prefWidth="1025.0" spacing="10" />
+        <Label fx:id="lblClima" layoutX="14.0" layoutY="8.0" prefHeight="36.0" prefWidth="392.0" style="-fx-text-fill: black; -fx-font-size: 16px;" />
+    </Pane>
+    <MFXComboBox fx:id="cmbEntrada" floatMode="DISABLED" layoutX="658.0" layoutY="719.0" prefHeight="40.0" prefWidth="282.0" promptText="Selecciona el socio para entrada" />
+    <MFXComboBox fx:id="cmbSalida" floatMode="DISABLED" layoutX="658.0" layoutY="769.0" prefHeight="40.0" prefWidth="282.0" promptText="Selecciona el socio para salida" />
+    <Button fx:id="btnEntrada" layoutX="949.0" layoutY="728.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="137.0" text="Entrada Manual" />
+    <Button fx:id="btnSalida" layoutX="949.0" layoutY="778.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="137.0" text="Salida Manual" />
+    <Pane fx:id="paneEntrada" layoutX="317.0" layoutY="365.0" prefHeight="207.0" prefWidth="308.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+        <Label fx:id="lblNoHayEntradas" alignment="CENTER" text="No hay entradas" visible="false" />
+        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="4.0">
+            <Image url="@../images/logo_carnet.png" />
+        </ImageView>
+        <ImageView fx:id="imgEntrada" fitHeight="98.0" fitWidth="81.0" layoutX="213.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+        <Label fx:id="lblNombreEntrada" layoutX="14.0" layoutY="14.0" prefHeight="24.0" prefWidth="215.0" style="-fx-text-fill: black; -fx-font-size: 14px;" text="Juan Lobaton Mateos" />
+        <Label layoutX="14.0" layoutY="51.0" prefHeight="24.0" prefWidth="35.0" style="-fx-text-fill: black; -fx-font-size: 12px; -fx-underline: true;" text="Socio" />
+        <Label fx:id="lblNumeroSocioEntrada" layoutX="14.0" layoutY="75.0" prefHeight="24.0" prefWidth="53.0" style="-fx-text-fill: black; -fx-font-size: 14px; -fx-underline: false;" text="211/1" />
+        <Label fx:id="lblTipoCarnetEntrada" layoutX="14.0" layoutY="163.0" prefHeight="24.0" prefWidth="92.0" style="-fx-text-fill: black; -fx-font-size: 14px; -fx-underline: false;" text="Adulto" />
+        <Label fx:id="lblPromocionEntrada" layoutX="154.0" layoutY="163.0" prefHeight="24.0" prefWidth="92.0" style="-fx-text-fill: black; -fx-font-size: 14px; -fx-underline: false;" text="2025/2026" />
+    </Pane>
+    <Label fx:id="lblEntrada" layoutX="317.0" layoutY="339.0" prefHeight="18.0" prefWidth="308.0" style="-fx-font-size: 14px;" text="Ultima Entrada" />
+    <Pane fx:id="paneSalida" layoutX="317.0" layoutY="603.0" prefHeight="207.0" prefWidth="308.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+        <Label fx:id="lblNoHaySalidas" alignment="CENTER" text="No hay salidas" visible="false" />
+        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="4.0">
+            <Image url="@../images/logo_carnet.png" />
+        </ImageView>
+        <ImageView fx:id="imgSalida" fitHeight="98.0" fitWidth="81.0" layoutX="213.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+        <Label fx:id="lblNombreSalida" layoutX="14.0" layoutY="14.0" prefHeight="24.0" prefWidth="215.0" style="-fx-text-fill: black; -fx-font-size: 14px;" text="Juan Lobaton Mateos" />
+        <Label layoutX="14.0" layoutY="51.0" prefHeight="24.0" prefWidth="35.0" style="-fx-text-fill: black; -fx-font-size: 12px; -fx-underline: true;" text="Socio" />
+        <Label fx:id="lblNumeroSocioSalida" layoutX="14.0" layoutY="75.0" prefHeight="24.0" prefWidth="53.0" style="-fx-text-fill: black; -fx-font-size: 14px; -fx-underline: false;" text="211/1" />
+        <Label fx:id="lblTipoCarnetSalida" layoutX="14.0" layoutY="163.0" prefHeight="24.0" prefWidth="92.0" style="-fx-text-fill: black; -fx-font-size: 14px; -fx-underline: false;" text="Adulto" />
+        <Label fx:id="lblPromocionSalida" layoutX="154.0" layoutY="163.0" prefHeight="24.0" prefWidth="92.0" style="-fx-text-fill: black; -fx-font-size: 14px; -fx-underline: false;" text="2025/2026" />
+    </Pane>
+    <Label fx:id="lblSalida" layoutX="317.0" layoutY="577.0" prefHeight="18.0" prefWidth="308.0" style="-fx-font-size: 14px;" text="Ultima Salida" />
+    <ListView fx:id="listReservas" layoutX="42.0" layoutY="364.0" prefHeight="444.0" prefWidth="234.0" />
+    <Label layoutX="42.0" layoutY="339.0" prefHeight="18.0" prefWidth="308.0" style="-fx-font-size: 14px;" text="Reservas Hoy" />
+   <MFXIconButton fx:id="helpIcon" layoutX="1087.0" layoutY="808.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleHelpIconClick" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: blue;" />
+</AnchorPane>

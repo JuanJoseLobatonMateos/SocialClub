@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="588.0" prefWidth="618.0" stylesheets="@/CSS/styles.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.AddSocioController">
+    <children>
+        <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="118.0" layoutY="60.0" prefHeight="40.0" prefWidth="144.0" text="Alta Nuevo Socio" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="39.0" />
+         </font></Label>
+        <Label layoutX="25.0" layoutY="148.0" text="Nombre:" />
+        <TextField fx:id="nombreField" layoutX="111.0" layoutY="148.0" />
+
+        <Label layoutX="25.0" layoutY="198.0" text="Apellidos:" />
+        <TextField fx:id="apellidosField" layoutX="111.0" layoutY="198.0" />
+
+        <Label layoutX="25.0" layoutY="248.0" text="Teléfono:" />
+        <TextField fx:id="telefonoField" layoutX="111.0" layoutY="248.0" />
+
+        <Label layoutX="25.0" layoutY="298.0" text="DNI:" />
+        <TextField fx:id="dniField" layoutX="111.0" layoutY="298.0" />
+
+        <Label layoutX="25.0" layoutY="348.0" text="Nº Socio" />
+        <TextField fx:id="numeroSocioField" layoutX="111.0" layoutY="348.0" />
+      <AnchorPane fx:id="pnlFoto" layoutX="399.0" layoutY="16.0" prefHeight="200.0" prefWidth="161.0">
+         <children>
+      
+              <!-- ImageView para mostrar la imagen -->
+              <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="161.0" />
+         </children>
+      </AnchorPane>
+
+        <!-- Botones para capturar imagen y huella -->
+        <Button layoutX="399.0" layoutY="225.0" onAction="#handleCapturaImagen" text="Capturar Imagen" />
+        <Button layoutX="403.0" layoutY="508.0" onAction="#handleCapturaHuella" text="Capturar Huella" />
+
+        <!-- Botón para guardar -->
+        <Button layoutX="140.0" layoutY="417.0" onAction="#handleGuardar" text="Guardar" />
+      <AnchorPane fx:id="pnlHuella" layoutX="399.0" layoutY="294.0" prefHeight="200.0" prefWidth="161.0">
+         <children>
+            <ImageView fx:id="imgHuella" fitHeight="200.0" fitWidth="161.0" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

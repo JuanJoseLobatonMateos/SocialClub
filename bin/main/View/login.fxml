@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="837.75" prefWidth="1296.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.LoginController">
+            <ImageView fitHeight="838.0" fitWidth="840.0" layoutX="229.0" layoutY="1.0" opacity="0.25" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="229.0" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="1.0">
+      <Image url="@../images/logo.png" />
+   </ImageView>
+   <Pane id="login_pane" cache="true" layoutX="351.0" layoutY="270.0" prefHeight="300.0" prefWidth="594.0" styleClass="login_pane" stylesheets="@../CSS/styles.css" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="351.0" AnchorPane.topAnchor="270.0">
+      <MFXTextField fx:id="loginField" accessibleHelp="Introduce un usuario" floatMode="ABOVE" layoutX="30.0" layoutY="43.0" prefHeight="42.0" prefWidth="535.0" promptText="Usuario" styleClass="mfx-text-field" />
+      <MFXPasswordField fx:id="passwordField" accessibleHelp="Introduce la contraseña" floatMode="ABOVE" layoutX="30.0" layoutY="117.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="535.0" promptText="Password">
+         <styleClass>
+            <String fx:value="mfx-password-field" />
+            <String fx:value="eye-icon" />
+         </styleClass></MFXPasswordField>
+      <MFXButton fx:id="loginButton" buttonType="RAISED" layoutX="196.0" layoutY="218.0" onAction="#handleLogin" prefHeight="40.0" prefWidth="203.0" styleClass="mfx-button" text="LOGIN">
+         <effect>
+            <Blend />
+         </effect>
+      </MFXButton>
+      <Label fx:id="validationLabel" layoutX="35.0" layoutY="225.0" prefHeight="17.0" prefWidth="528.0" textFill="red" translateY="-65.0" visible="false" />
+   </Pane>
+</AnchorPane>

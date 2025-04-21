@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+.root {
+    -fx-font-family: 'Comfortaa Bold', sans-serif;
+
+    -fondo_toolbar: rgba(84, 153, 199, 1);
+    -fondo: rgba(30, 60, 90, 1);
+    -fondo_boton: rgba(64, 105, 145, 1);
+    -fondo_boton_hover: rgb(113, 143, 173);
+    -fondo_boton_pressed: rgb(41, 75, 105);
+    -login_pane_bacground: rgba(200, 220, 240, 0.5);
+    -boton_logout_color: rgb(66, 99, 175);
+    -fondo_anchorPane: rgba(64, 105, 145, 1);
+    -rojo: #ff5252; /* Color de error */
+    -verde: #69f0ae; /* Color de éxito */
+    -amarillo: #ffeb3b; /* Color de advertencia */
+    -azul: #40c4ff; /* Color de información */
+    -mfx-blue: #42a5f5; /* Azul Material */
+    -mfx-charcoal: #8d6e63; /* Carbón Material */
+    -mfx-green: #66bb6a; /* Verde Material */
+    -mfx-onyx: #a1887f; /* Ónix Material */
+    -mfx-orange: #ffb74d; /* Naranja Material */
+    -mfx-purple: #ba68c8; /* Púrpura Material */
+    -mfx-red: #ef5350; /* Rojo Material */
+    -mfx-yellow: #ffee58; /* Amarillo Material */
+
+    -mfx-text-he: rgba(0, 0, 0, 0.87); /* Alta Énfasis */
+    -mfx-text-me: rgba(0, 0, 0, 0.60); /* Media Énfasis */
+    -mfx-text-disabled: rgba(0, 0, 0, 0.38); /* Deshabilitado */
+}
+#anchorPane {
+    -fx-background-color: -fondo_anchorPane;
+}
+
+.root {
+    -fx-background-color: -fondo;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-background-radius: 10;
+    -fx-font-family: "Roboto";
+}
+
+.main {
+    -fx-background-color: transparent;
+}
+
+.toolbar {
+    -fx-background-color: -fondo_toolbar;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.toolbar .label {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 20;
+    -fx-text-fill: white; /* Específico para el Label en la toolbar */
+}
+
+.tab-header-background {
+    -fx-background-color: -fondo;
+}
+
+.login_pane {
+    -fx-background-color: -login_pane_bacground;
+    -fx-background-radius: 10;
+}
+
+.fondo {
+    -fx-background-color: -login_pane_bacground;
+}
+
+.always-on-top-icon {
+    -mfx-color: -azul;
+}
+
+.minimize-icon {
+    -mfx-color: -amarillo;
+}
+
+.close-icon {
+    -mfx-color: -rojo;
+}
+
+/*********************************************************
+    * Botones
+*********************************************************/
+.mfx-icon-button {
+    -fx-background-color: -fondo_boton;
+    -fx-background-radius: 50;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+}
+
+.mfx-font-icon:focused,
+.mfx-icon-button:hover {
+    -fx-background-color: -fondo_boton_hover;
+    -fx-background-radius: 50;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 12, 0.5, 0.0, 0.0);
+}
+
+.mfx-icon-button:pressed {
+    -fx-background-color: -fondo_boton_pressed;
+    -fx-background-radius: 50;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+}
+
+.mfx-icon-button .mfx-font-icon {
+    -mfx-color: white;
+    -mfx-size: 24;
+    -fx-cursor: hand;
+}
+
+.mfx-button {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-color: -fondo_boton;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-cursor: hand;
+}
+
+.Tab {
+    -fx-text-fill: white;
+    -fx-background-color: -fondo;
+    -fx-effect: dropshadow(gaussian, rgb(30, 31, 37), 10, 0.5, 0.0, 0.0);
+    -fx-cursor: hand;
+}
+
+.mfx-button:hover,
+.mfx-button:focused {
+    -fx-background-color: -fondo_boton_hover;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-cursor: hand;
+}
+
+.mfx-button:pressed {
+    -fx-background-color: -fondo_boton_pressed;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-cursor: hand;
+}
+
+#btnLogout {
+    -fx-font-size: 16px;
+    -fx-background-radius: 5;
+    -fx-background-color: -boton_logout_color;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-cursor: hand;
+}
+
+#btnLogout:hover {
+    -fx-background-color: -boton_logout_color;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-cursor: hand;
+}
+
+.months-combo, .years-combo, .virtual-flow {
+    -fx-background-color: -login_pane_bacground;
+    -fx-background-radius: 5;
+    -fx-font-size: 10px;
+    -fx-text-fill: white;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-cursor: hand;
+}
+
+#btnLogout:pressed {
+    -fx-background-color: -boton_logout_color;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-cursor: hand;
+}
+
+#loginButton:pressed {
+    -fx-cursor: wait;
+}
+
+#anchorPane {
+    -fx-background-color: -fondo_anchorPane;
+}
+
+#tabPane {
+    -fx-background-color: -fondo;
+}
+
+.transparent-button {
+    -fx-content-display: top;
+    -fx-background-color: #406090;
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-padding: 10px; /* Añadir padding */
+}
+
+.transparent-button:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+}
+
+/*********************************************************
+    * TextFields
+*********************************************************/
+.mfx-text-field {
+    -mfx-main: -mfx-purple;
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.mfx-text-field:readonly,
+.mfx-text-field:readonly .text-field {
+    -fx-cursor: default;
+}
+
+.mfx-text-field .text-field {
+    /* Selected text highlight */
+    -fx-highlight-fill: #ECE0FD;
+    /* Prompt text color */
+    -fx-prompt-text-fill: -mfx-text-me;
+}
+
+.mfx-text-field .text-field .text {
+    -fx-font-smoothing-type: lcd;
+}
+
+.mfx-text-field:focus-within {
+    -fx-background-insets: 2;
+    -fx-border-color: -mfx-main;
+    -fx-border-width: 1.5;
+    -fx-border-insets: -0.5;
+}
+
+.mfx-text-field .floating-text {
+    -fx-font-family: "Open Sans Regular";
+    -fx-text-fill: -mfx-text-he;
+}
+
+.mfx-text-field:floating .floating-text {
+    -fx-background-color: white;
+}
+
+.mfx-text-field:focus-within .floating-text {
+    -fx-text-fill: -mfx-main;
+}
+
+.mfx-text-field .measure-unit {
+    -fx-font-family: "Open Sans Regular";
+    -fx-text-fill: -mfx-text-he;
+}
+
+.mfx-text-field .text-field {
+    -fx-text-box-border: transparent;
+    -fx-background-color: transparent;
+    -fx-backrgound-insets: 0;
+    -fx-padding: 0;
+}
+
+.mfx-text-field .text-field:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.mfx-text-field:disabled {
+    -fx-border-color: rgba(0, 0, 0, 0.1);
+}
+
+.mfx-text-field:disabled .floating-text {
+    -fx-text-fill: -mfx-text-disabled;
+}
+
+.mfx-text-field:disabled .text-field {
+    -fx-text-inner-color: -mfx-text-disabled;
+}
+
+/*********************************************************
+    * PasswordFields
+*********************************************************/
+.mfx-password-field:disabled .eye-icon {
+    -mfx-color: #bcbcbc;
+    -fx-alignment: center;
+    -fx-font-size: 1.5em;
+}
+
+.invalid-field {
+    -fx-border-color: red;
+    -fx-text-fill: red;
+}
+
+.label {
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: white;
+}
+
+.dialogo {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-background-radius: 10;
+    -fx-font-size: 18px;
+    -fx-font-family: "Roboto";
+    -fx-background-color: -fondo;
+
+}
+
+/********************
+Date Picker
+********************/
+.mfx-date-picker {
+    -fx-padding: 3 5 3 5;
+}
+
+.mfx-date-picker .mfx-icon-wrapper .mfx-ripple-generator {
+    -mfx-ripple-radius: 24;
+    -mfx-ripple-color: #778fef;
+}
+
+.mfx-date-picker:focus-within .icon {
+    -mfx-color: #bcbcbc;
+}
+
+.mfx-date-picker:disabled .icon {
+    -mfx-color: #bcbcbc;
+}
+
+/********************
+Popup
+********************/
+.mfx-date-picker .date-picker-popup .content {
+    -fx-background-color: #60c2f3;
+    -fx-background-radius: 10;
+    -fx-border-color: #60c2f3;
+    -fx-border-radius: 10;
+    -fx-padding: 15;
+    -fx-min-height: 300;
+}
+
+.mfx-date-picker .date-picker-popup .left-arrow:disabled,
+.mfx-date-picker .date-picker-popup .right-arrow:disabled {
+    -fx-opacity: 1;
+}
+
+.mfx-date-picker .date-picker-popup .left-arrow .mfx-ripple-generator,
+.mfx-date-picker .date-picker-popup .right-arrow .mfx-ripple-generator {
+    -mfx-ripple-color: #2278d5;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo,
+.mfx-date-picker .date-picker-popup .years-combo {
+    -mfx-float-mode: disabled;
+    -mfx-scroll-on-open: true;
+    -fx-border-color: transparent;
+    -fx-min-width: 120;
+    -fx-min-height: 40;
+    -fx-font-family: "Open Sans SemiBold";
+}
+
+.mfx-date-picker .date-picker-popup .months-combo:focus-within,
+.mfx-date-picker .date-picker-popup .years-combo:focus-within {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+    font-weight: bold;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .mfx-icon-wrapper .mfx-ripple-generator,
+.mfx-date-picker .date-picker-popup .years-combo .mfx-icon-wrapper .mfx-ripple-generator {
+    -mfx-ripple-color: #2278d5;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell {
+    -fx-font-family: "Open Sans SemiBold";
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:hover,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:hover {
+    -fx-background-color: #6c3fc5;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected {
+    -fx-background-color: #9990ab;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected .label,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected .label {
+    -fx-text-fill: -mfx-purple;
+}
+
+.mfx-date-picker .date-picker-popup .week-day {
+    -fx-font-family: "Open Sans SemiBold";
+    -fx-text-fill: -mfx-text-he;
+    -fx-padding: 0 0 5 0;
+}
+/* Estilo para la cabecera de la tabla */
+.table-view .column-header-background {
+    -fx-background-color: #2dade0; /* Fondo azul claro */
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #00008b; /* Texto azul oscuro */
+    -fx-font-size: 14px;
+    -fx-alignment: center-left; /* Alinear el texto de las celdas a la izquierda */
+
+}
+
+/* Estilo para las filas de la tabla */
+.table-view .table-row-cell {
+    -fx-background-color: #f0f0f0; /* Fondo gris claro */
+    -fx-text-fill: black; /* Texto negro */
+    -fx-alignment: center-left; /* Alinear el texto de las celdas a la izquierda */
+
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #e0e0e0; /* Fondo gris más oscuro para filas impares */
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #64b5f6; /* Fondo azul claro para la fila seleccionada */
+    -fx-text-fill: white; /* Texto blanco para la fila seleccionada */
+}
+
+/* Estilo para las celdas de la tabla */
+.table-view .table-cell {
+    -fx-alignment: center-left; /* Alinear el contenido de las celdas a la izquierda */
+}
+#barra_settings {
+    -fx-background-color: rgba(20, 40, 60, 1); /* Azul oscuro */
+}
+#img_user {
+    -fx-margin-top: 15px;
+}
+.socio{
+    -fx-font-size: 14px;
+
+
+}
+.time-field:disabled {
+    -fx-opacity: 1.0; /* Mantiene la opacidad completa */
+    -fx-background-color: lightgray; /* Cambia el color de fondo si es necesario */
+}
+/* Estilo para el título del gráfico */
+.chart-title {
+    -fx-text-fill: black; /* Color negro para el título */
+    -fx-font-size: 20px;
+    -fx-padding: 0 0 30px 0;/* Tamaño de fuente del título */
+    -fx-font-weight: bold; /* Negrita para el título */
+}
+/* Estilo para la leyenda del gráfico */
+.chart-legend {
+    -fx-background-color: transparent; /* Fondo transparente para la leyenda */
+    -fx-text-fill: black; /* Tamaño de fuente de la leyenda */
+    -fx-font-size: 55px;
+}
+.chart-legend {
+    -fx-background-color: transparent; /* Fondo transparente */
+    -fx-padding: 10; /* Espaciado interno */
+}
+
+/* Estilo para cada elemento de la leyenda */
+.chart-legend-item {
+    -fx-text-fill: black; /* Color del texto */
+    -fx-font-size: 14px;  /* Tamaño de fuente */
+    -fx-font-weight: normal; /* Grosor de la fuente */
+}
+/* Estilo para el primer segmento del gráfico */
+.default-color0.chart-pie {
+    -fx-pie-color: #9eabfc; /* Color personalizado */
+}
+
+/* Estilo para el segundo segmento del gráfico */
+.default-color1.chart-pie {
+    -fx-pie-color: rgba(30, 60, 90, 1); /* Color personalizado */
+}
+.mfx-combo-box-cell {
+    -mfx-main: black;
+    -mfx-hover: rgba(30, 60, 90, 1);
+    -mfx-selected: rgba(30, 60, 90, 1);
+    -fx-background-color: white;
+    -fx-padding: 5;
+}
+
+.mfx-combo-box-cell:hover {
+    -fx-background-color: -mfx-hover;
+}
+
+.mfx-combo-box-cell:selected {
+    -fx-background-color: -mfx-selected;
+}
+
+.mfx-combo-box-cell .data-label {
+    -fx-font-family: "Open Sans Regular";
+    -fx-font-size: 14;
+    -fx-text-fill: black;
+}
+.mfx-combo-box-cell .data-label:hover {
+    -fx-font-family: "Open Sans Regular";
+    -fx-font-size: 14;
+    -fx-text-fill: #ffffff;
+}
+.mfx-combo-box-cell .data-label:selected {
+    -fx-font-family: "Open Sans Regular";
+    -fx-font-size: 14;
+    -fx-text-fill: #ffffff;
+}
+.mfx-radio-button {
+    -mfx-main: #707fe3;
+    -mfx-secondary: #ffffff;
+    -fx-font-family: "Open Sans Regular";
+    -fx-text-fill: white;
+    -fx-cursor: HAND;
+}
+
+.mfx-radio-button .radio {
+    -fx-stroke-width: 2.0;
+    -fx-fill: transparent;
+    -fx-stroke: -mfx-secondary;
+}
+
+.mfx-radio-button .dot {
+    -fx-fill: -mfx-main;
+}
+
+.mfx-radio-button .mfx-ripple-generator {
+    -mfx-animation-speed: 2;
+    -mfx-ripple-color: derive(-mfx-main, 110%);
+    -mfx-ripple-radius: 8;
+}
+
+.mfx-radio-button:selected .radio {
+    -fx-stroke: -mfx-main;
+}
+
+.mfx-radio-button:disabled:selected .radio {
+    -fx-stroke: -mfx-secondary;
+}
+
+.mfx-radio-button:disabled:selected .dot {
+    -fx-fill: -mfx-secondary;
+}

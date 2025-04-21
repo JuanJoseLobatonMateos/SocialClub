@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import io.github.palexdev.mfxcomponents.controls.buttons.MFXIconButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="857.0" prefWidth="1119.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.SocioController">
+    <AnchorPane layoutX="87.0" layoutY="51.0" prefHeight="631.0" prefWidth="503.0">
+        <effect>
+            <DropShadow />
+        </effect>
+        <TableView fx:id="tablaSocio" layoutX="10.0" layoutY="9.0" prefHeight="725.0" prefWidth="435.0" stylesheets="@../CSS/styles.css">
+            <columns>
+                <TableColumn fx:id="colNumSocio" prefWidth="89.0" styleClass="socio" text="Nº Socio" />
+                <TableColumn fx:id="colNombre" prefWidth="132.0" styleClass="socio" text="Nombre" />
+                <TableColumn fx:id="colApellidos" prefWidth="189.0" styleClass="socio" text="Apellidos" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </AnchorPane>
+    <AnchorPane layoutX="590.0" layoutY="78.0" prefHeight="289.0" prefWidth="503.0">
+        <effect>
+            <DropShadow />
+        </effect>
+        <children>
+         <VBox layoutX="33.0" layoutY="24.0" prefHeight="296.0" prefWidth="252.0" spacing="10.0">
+            <children>
+               <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="217.0" spacing="10.0">
+                  <children>
+                        <Label prefHeight="24.0" prefWidth="172.0" styleClass="socio" text="Nº Socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </Label>
+                        <TextField fx:id="txtNumSocio" disable="true" editable="false" prefHeight="23.0" prefWidth="243.0" styleClass="socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </TextField>
+                  </children>
+               </HBox>
+               <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="217.0" spacing="10.0">
+                  <children>
+                     <Label prefHeight="24.0" prefWidth="172.0" styleClass="socio" text="Nombre">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtNombre" disable="true" editable="false" prefHeight="23.0" prefWidth="243.0" styleClass="socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </TextField>
+                  </children>
+               </HBox>
+               <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="217.0" spacing="10.0">
+                  <children>
+                     <Label prefHeight="24.0" prefWidth="172.0" styleClass="socio" text="Apellidos">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtApellidos" disable="true" editable="false" prefHeight="23.0" prefWidth="243.0" styleClass="socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </TextField>
+                  </children>
+               </HBox>
+               <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="217.0" spacing="10.0">
+                  <children>
+                     <Label prefHeight="24.0" prefWidth="172.0" styleClass="socio" text="DNI">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtDNI" disable="true" editable="false" prefHeight="23.0" prefWidth="243.0" styleClass="socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </TextField>
+                  </children>
+               </HBox>
+               <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="217.0" spacing="10.0">
+                  <children>
+                     <Label prefHeight="24.0" prefWidth="172.0" styleClass="socio" text="Teléfono">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtTelefono" disable="true" editable="false" prefHeight="23.0" prefWidth="243.0" styleClass="socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </TextField>
+                  </children>
+               </HBox>
+               <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="217.0" spacing="10.0">
+                  <children>
+                     <Label prefHeight="24.0" prefWidth="172.0" styleClass="socio" text="Email">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtEmail" disable="true" editable="false" prefHeight="23.0" prefWidth="243.0" styleClass="socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </TextField>
+                  </children>
+               </HBox>
+               <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="217.0" spacing="10.0">
+                  <children>
+                     <Label prefHeight="24.0" prefWidth="172.0" styleClass="socio" text="F.Nacimiento">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtNacimiento" disable="true" editable="false" prefHeight="23.0" prefWidth="243.0" styleClass="socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </TextField>
+                  </children>
+               </HBox>
+               <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="217.0" spacing="10.0">
+                  <children>
+                     <Label prefHeight="24.0" prefWidth="172.0" styleClass="socio" text="Fecha Alta">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtFechaAlta" disable="true" editable="false" prefHeight="23.0" prefWidth="243.0" styleClass="socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </TextField>
+                  </children>
+               </HBox>
+               <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="217.0" spacing="10.0">
+                  <children>
+                     <Label prefHeight="24.0" prefWidth="172.0" styleClass="socio" text="Titularidad">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtTitularidad" disable="true" editable="false" prefHeight="23.0" prefWidth="243.0" styleClass="socio">
+                        <font>
+                           <Font size="7.0" />
+                        </font>
+                     </TextField>
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+         <ImageView fx:id="imgPhoto" fitHeight="200.0" fitWidth="300.0" layoutX="303.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/noimage.jpg" />
+            </image>
+         </ImageView>
+        </children>
+    </AnchorPane>
+   <Separator layoutX="612.0" layoutY="495.0" prefHeight="0.0" prefWidth="463.0" />
+   <MFXComboBox fx:id="cmbFiltros" floatMode="ABOVE" layoutX="615.0" layoutY="518.0" prefHeight="40.0" prefWidth="463.0" promptText="Selecciona un filtro ..." />
+   <Pane fx:id="containerFamilia" layoutX="615.0" layoutY="571.0" prefHeight="82.0" prefWidth="463.0" visible="false">
+      <children>
+         <MFXComboBox fx:id="cmbFamilias" floatMode="ABOVE" layoutY="21.0" prefHeight="40.0" prefWidth="463.0" promptText="Selecciona una familia" />
+      </children>
+   </Pane>
+   <Pane fx:id="containerRangoEdad" layoutX="615.0" layoutY="592.0" prefHeight="82.0" prefWidth="463.0" visible="false">
+      <children>
+         <HBox focusTraversable="true" prefHeight="18.0" prefWidth="463.0" spacing="27.0">
+            <children>
+               <MFXRadioButton gap="3.0" graphicTextGap="0.0" style="-fx-font-size: 14;" styleClass="radio" text="Bebe" textFill="WHITE" userData="bebe">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="rangoEdad" />
+                  </toggleGroup>
+               </MFXRadioButton>
+               <MFXRadioButton gap="3.0" graphicTextGap="0.0" style="-fx-font-size: 14;" styleClass="radio" text="Adolescente" textFill="WHITE" toggleGroup="$rangoEdad" userData="adolescente" />
+               <MFXRadioButton gap="3.0" graphicTextGap="0.0" style="-fx-font-size: 14;" styleClass="radio" text="Niño" textFill="WHITE" toggleGroup="$rangoEdad" userData="niño" />
+               <MFXRadioButton gap="3.0" graphicTextGap="0.0" style="-fx-font-size: 14;" styleClass="radio" text="Adulto" textFill="WHITE" toggleGroup="$rangoEdad" userData="adulto" />
+               <MFXRadioButton gap="3.0" graphicTextGap="0.0" style="-fx-font-size: 14;" styleClass="radio" text="Abuelos" textFill="WHITE" toggleGroup="$rangoEdad" userData="abuelo" />
+            </children>
+         </HBox>
+      </children>
+   </Pane>
+   <Pane fx:id="containerBusqueda" layoutX="612.0" layoutY="592.0" prefHeight="40.0" prefWidth="463.0" visible="false">
+      <children>
+         <MFXTextField fx:id="txtBusqueda" layoutY="-4.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="463.0" promptText="Busca por nombre, apellidos, telefono, DNI, email, numero de socio..." />
+      </children>
+   </Pane>
+   <MFXButton fx:id="btnCarnets" layoutX="950.0" layoutY="742.0" onMouseClicked="#handleImprimirCarnets" text="IMPRIMIR CARNETS" />
+   <StackPane layoutX="797.5389404296875" layoutY="603.411865234375">
+      <children>
+         <ProgressIndicator fx:id="progressIndicator" minHeight="-Infinity" minWidth="-Infinity" prefHeight="92.0" prefWidth="108.0" />
+      </children>
+   </StackPane>
+   <MFXButton fx:id="btnReporte" layoutX="615.0" layoutY="742.0" onMouseClicked="#handleImprimirReporte" text="IMPRIMIR REPORTE" />
+   <Text fill="WHITE" layoutX="742.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SOCIOS" textAlignment="CENTER" wrappingWidth="208.384765625">
+      <font>
+         <Font name="DejaVu Sans Mono Bold" size="33.0" />
+      </font>
+   </Text>
+   <MFXIconButton fx:id="helpIcon" layoutX="1083.0" layoutY="814.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleHelpIconClick" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: blue;" />
+</AnchorPane>

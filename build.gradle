@@ -1,0 +1,265 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'com.github.ben-manes.versions' version '0.47.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'org.beryx.jlink' version '3.1.1'
+    id 'com.autonomousapps.dependency-analysis' version '1.28.0'
+    id 'jacoco'
+
+
+
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+group = 'org.socialclub'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://maven.jumpmind.com/repo/'
+    }
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+    maven {
+        url "https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/"
+        name "jaspersoft-third-party"
+    }
+    maven {
+        url "https://jaspersoft.jfrog.io/jaspersoft/jr-ce-snapshots"
+        name "jr-ce-snapshots"
+    }
+    maven {
+        url "https://jaspersoft.jfrog.io/jaspersoft/jr-ce-releases"
+        name "jr-ce-releases"
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:deprecation"
+}
+
+tasks.withType(Test).configureEach {
+    systemProperty 'file.encoding', 'UTF-8'
+}
+
+tasks.withType(JavaExec).configureEach {
+    systemProperty 'file.encoding', 'UTF-8'
+}
+
+dependencies {
+    implementation libs.gson
+    implementation libs.javafx.web
+
+    runtimeOnly libs.hibernateValidator
+    runtimeOnly libs.slf4jApi
+    runtimeOnly libs.log4jCore
+    runtimeOnly libs.controlsfx
+    runtimeOnly libs.slf4j
+    runtimeOnly libs.log4jApi
+    runtimeOnly libs.log4jCore
+
+    implementation libs.mfxresources
+    implementation libs.jakartaPersistenceApi
+    implementation libs.jakartaValidationApi
+    implementation libs.protobufJava
+    implementation libs.commonsIo
+    implementation libs.jasperreportsJdt
+    implementation libs.jasperreportsBarcode4j
+    implementation libs.commonsCollections4
+    implementation libs.jasperreportsPdf
+    implementation libs.jasperreports.fonts
+    implementation libs.jasperreports.metadata
+    implementation libs.jasperReports
+    implementation libs.javaxMail
+    implementation libs.webcamCapture
+    implementation libs.mysqlConnector
+    implementation libs.mfxComponents
+    implementation libs.hibernateCore
+    implementation libs.jbcrypt
+    implementation libs.materialfx
+    implementation libs.dpotjni
+    implementation libs.dpotapi
+    testRuntimeOnly libs.junitJupiterEngine
+    testImplementation libs.junitJupiterApi
+    testImplementation libs.mockitoCore
+    testImplementation libs.mockitoJunitJupiter
+    testRuntimeOnly libs.junitJupiterEngine
+    implementation 'com.openhtmltopdf:openhtmltopdf-pdfbox:1.0.10'
+    implementation 'org.jsoup:jsoup:1.16.1'
+    implementation 'com.github.javaparser:javaparser-core:3.25.4'
+
+}
+
+javafx {
+    version = libs.versions.javafx.get()
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.media']
+}
+
+application {
+    mainClass = 'org.socialclub.socialclub.main.App'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': application.mainClass
+        )
+    }
+}
+tasks.named('distZip') {
+    dependsOn tasks.named('shadowJar')
+}
+
+tasks.named('distTar') {
+    dependsOn tasks.named('shadowJar')
+}
+
+tasks.named('startScripts') {
+    dependsOn tasks.named('shadowJar')
+}
+tasks.named('startShadowScripts') {
+    dependsOn tasks.named('jar')
+}
+tasks.named('shadowJar') {
+    archiveClassifier.set('')
+    manifest {
+        attributes(
+                'Main-Class': application.mainClass
+        )
+    }
+    doFirst {
+        delete fileTree(dir: 'build/libs', include: '*.jar')
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:deprecation"
+}
+
+tasks.withType(Test).configureEach {
+    systemProperty 'file.encoding', 'UTF-8'
+}
+
+tasks.withType(JavaExec).configureEach {
+    systemProperty 'file.encoding', 'UTF-8'
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+    integrationTest {
+        java {
+            srcDir 'src/integrationTest/java'
+        }
+        resources {
+            srcDir 'src/integrationTest/resources'
+        }
+        compileClasspath += sourceSets.main.output + sourceSets.test.output
+        runtimeClasspath += sourceSets.main.output + sourceSets.test.output
+    }
+}
+
+tasks.register('integrationTest', Test) {
+    description = 'Runs integration tests.'
+    group = 'verification'
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    shouldRunAfter test
+    useJUnitPlatform() // Asegúrate de que esta línea esté presente
+}
+
+configurations {
+    integrationTestImplementation.extendsFrom testImplementation
+    integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
+}
+
+check.dependsOn integrationTest
+
+tasks.named('processResources') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+javadoc {
+    source = sourceSets.main.allJava
+    classpath = sourceSets.main.compileClasspath
+    destinationDir = layout.buildDirectory.dir("docs/javadoc").get().asFile
+    options {
+        docTitle = "Social Club - JavaDoc"
+        encoding 'UTF-8'
+        memberLevel = JavadocMemberLevel.PUBLIC
+        version true
+    }
+}
+test {
+    jvmArgs += '-javaagent:' + configurations.testRuntimeClasspath.find { it.name.contains("mockito-core") }
+}
+tasks.withType(JavaExec).configureEach {
+    jvmArgs = jvmArgs.findAll { !it.startsWith('-Xshare') }
+}
+// Configuración de JaCoCo
+jacoco {
+    toolVersion = "0.8.10"
+}
+
+tasks.test {
+    finalizedBy tasks.jacocoTestReport // Genera el reporte de JaCoCo después de ejecutar las pruebas
+}
+
+tasks.jacocoTestReport {
+    dependsOn tasks.test // Asegura que las pruebas se ejecuten antes de generar el reporte
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+}
+
+
+configurations {
+    integrationTestImplementation.extendsFrom testImplementation
+    integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
+}
+
+
+tasks.named('processResources') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+tasks.named('test') {
+    finalizedBy tasks.named('jacocoTestReport')
+}
+check.dependsOn integrationTest
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    // Si necesitas Mockito, usa sólo uno de estos:
+    // jvmArgs += "-javaagent:${configurations.testRuntimeClasspath.find { it.name.contains('mockito-inline') }}"
+
+    finalizedBy jacocoTestReport
+}
+tasks.register('pdfCombinedTestReport', JavaExec) {
+    dependsOn test, integrationTest
+    mainClass = 'org.socialclub.socialclub.report.CombinedHtmlToPdfConverter'
+    classpath = sourceSets.main.runtimeClasspath
+    doLast {
+        println "PDF combinado generado correctamente."
+    }
+}

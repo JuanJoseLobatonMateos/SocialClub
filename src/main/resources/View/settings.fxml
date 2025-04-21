@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.mfxcomponents.controls.buttons.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="837.75" prefWidth="1119.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.SettingsController">
+   <top>
+      <HBox id="barra_settings" alignment="CENTER" prefHeight="100.0" prefWidth="1119.0" spacing="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MFXButton fx:id="btnAddEmpleado" accessibleRole="BUTTON" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleAddEmpleado" prefHeight="40.0" prefWidth="190.0" style="-fx-background-color: transparent; -fx-background-radius: 25;" text="Añadir Empleado" textAlignment="CENTER" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </MFXButton>
+            <MFXButton fx:id="btnAddSocio" accessibleRole="BUTTON" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="190.0" style="-fx-background-color: transparent; -fx-background-radius: 25;" text="Añadir Socio" textAlignment="CENTER" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </MFXButton>
+            <MFXButton fx:id="btnAddInstalacion" accessibleRole="BUTTON" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="190.0" style="-fx-background-color: transparent; -fx-background-radius: 25;" text="Añadir Instalacion" textAlignment="CENTER" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </MFXButton>
+         </children>
+         <BorderPane.margin>
+            <Insets right="2.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

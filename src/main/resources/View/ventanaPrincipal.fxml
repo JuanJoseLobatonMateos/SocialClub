@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.mfxresources.fonts.MFXFontIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="939.0" prefWidth="1363.0" styleClass="main" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.VentanaPrincipalController">
+   <AnchorPane fx:id="rootPane" layoutX="24.0" layoutY="28.0" prefHeight="883.75" prefWidth="1296.0" styleClass="root" stylesheets="/CSS/styles.css" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="28.0">
+      <HBox fx:id="toolbar" alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="46.0" prefWidth="1296.0" spacing="10.0" styleClass="toolbar" AnchorPane.bottomAnchor="838.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+         <Label prefHeight="34.0" prefWidth="234.0" text="Social Club" translateX="-825.0">
+
+         </Label>
+         <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" translateX="-1135.0">
+            <Image url="@../images/logo.png" />
+         </ImageView>
+         <MFXFontIcon fx:id="helpIcon" description="fas-circle-question" color="white" onMouseClicked="#handleHelpIconClick" size="15.0" />
+         <MFXFontIcon fx:id="alwaysOnTopIcon" description="fas-circle" onMouseClicked="#handleAlwaysOnTopIconClick" size="15.0" styleClass="always-on-top-icon" />
+         <MFXFontIcon fx:id="minimizeIcon" description="fas-circle" onMouseClicked="#handleMinimizeIconClick" size="15.0" styleClass="minimize-icon" />
+         <MFXFontIcon fx:id="closeIcon" description="fas-circle" onMouseClicked="#handleCloseIconClick" size="15.0" styleClass="close-icon" />
+      </HBox>
+      <AnchorPane fx:id="panelPrincipal" layoutY="46.0" prefHeight="837.75" prefWidth="1296.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0">
+      </AnchorPane>
+      <effect>
+         <DropShadow />
+      </effect>
+   </AnchorPane>
+</AnchorPane>

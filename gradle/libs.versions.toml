@@ -1,0 +1,67 @@
+[versions]
+junit = "5.10.2"
+mockito = "5.15.2"
+gson= "2.12.1"
+javafxWeb="23.0.1"
+mfxresources = "11.9.1"
+jakartaPersistenceApi = "3.1.0"
+jakartaValidationApi = "3.0.2"
+slf4jApi = "2.0.9"
+protobufJava = "4.29.3"  # Protocol Buffers, utilizado para la serialización de datos.
+commonsIo = "2.18.0"  # Commons IO, biblioteca para operaciones de entrada/salida en Java.
+hibernateValidator = "8.0.0.Final" # Hibernate Validator, utilizado para la validación de datos.
+jasperreportsJdt = "7.0.1" # JasperReports JDT, utilizado para la generación de reportes en Java.
+jasperreportsBarcode4j = "7.0.1" # JasperReports Barcode4J, utilizado para la generación de códigos de barras en reportes.
+commonsCollections4 = "4.5.0-M3" # CommonsCollections
+jasperreportsPdf = "7.0.1" # Compass Reports
+jasperReports = "7.0.1" # Biblioteca para la generación de reportes en Java.
+javaxMail = "1.6.2" # Biblioteca para enviar correos electrónicos.
+javafx = "23.0.1" # Versión de JavaFX, utilizada para crear interfaces gráficas en Java.
+webcamCapture = "0.3.12" # Biblioteca para capturar imágenes desde una webcam.
+mysqlConnector = "8.0.33" # Conector JDBC para MySQL, permite la conexión a bases de datos MySQL.
+mfxComponents = "11.24.0" # Componentes adicionales para JavaFX.
+hibernateCore = "6.6.2.Final" # Hibernate ORM, utilizado para el mapeo objeto-relacional.
+log4jCore = "2.24.3" # Log4j Core, utilizado para el registro de logs.
+log4jApi = "2.24.3" # Log4j API, interfaz de programación para Log4j.
+jbcrypt = "0.4" # Biblioteca para el cifrado de contraseñas utilizando BCrypt.
+materialfx = "11.17.0" # Componentes de Material Design para JavaFX.
+dpotjni = "1.0.0" # Biblioteca JNI para DigitalPersona OneTouch.
+dpotapi = "1.0.0" # API para DigitalPersona OneTouch.
+controlsfx = "11.2.1" # Biblioteca de controles adicionales para JavaFX.
+junitJupiterEngine = "5.10.2" # Motor de JUnit Jupiter, ejecuta las pruebas unitarias.
+slf4j = "2.0.7" # Simple Logging Facade for Java, interfaz de programación para sistemas de registro de logs.
+
+[libraries]
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+javafx-web = { group = "org.openjfx", name = "javafx-web", version.ref = "javafxWeb" }
+mfxresources = { group = "io.github.palexdev", name = "mfxresources", version.ref = "mfxresources" }
+jakartaPersistenceApi = { group = "jakarta.persistence", name = "jakarta.persistence-api", version.ref = "jakartaPersistenceApi" }
+jakartaValidationApi = { group = "jakarta.validation", name = "jakarta.validation-api", version.ref = "jakartaValidationApi" }
+slf4jApi = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4jApi" }
+protobufJava = { group = "com.google.protobuf", name = "protobuf-java", version.ref = "protobufJava" }
+commonsIo = { group = "commons-io", name = "commons-io", version.ref = "commonsIo" }
+hibernateValidator = { group = "org.hibernate.validator", name = "hibernate-validator", version.ref = "hibernateValidator" }
+jasperreportsJdt = { group = "net.sf.jasperreports", name = "jasperreports-jdt", version.ref = "jasperreportsJdt" }
+jasperreportsBarcode4j = { group = "net.sf.jasperreports", name = "jasperreports-barcode4j", version.ref = "jasperreportsBarcode4j" }
+commonsCollections4 = { group = "org.apache.commons", name = "commons-collections4", version.ref = "commonsCollections4" }
+jasperreportsPdf = { group = "net.sf.jasperreports", name = "jasperreports-pdf", version.ref = "jasperreportsPdf" }
+jasperreports-fonts = { group = "net.sf.jasperreports", name = "jasperreports-fonts", version.ref = "jasperReports" }
+jasperreports-metadata = { group = "net.sf.jasperreports", name = "jasperreports-metadata", version.ref = "jasperReports" }
+jasperReports = { group = "net.sf.jasperreports", name = "jasperreports", version.ref = "jasperReports" }
+javaxMail = { group = "com.sun.mail", name = "javax.mail", version.ref = "javaxMail" } # Biblioteca para enviar correos electrónicos.
+slf4j = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j" }
+log4jCore = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4jCore" }
+webcamCapture = { module = "com.github.sarxos:webcam-capture", version.ref = "webcamCapture" }
+mysqlConnector = { module = "mysql:mysql-connector-java", version.ref = "mysqlConnector" }
+mfxComponents = { module = "io.github.palexdev:mfxcomponents", version.ref = "mfxComponents" }
+hibernateCore = { module = "org.hibernate.orm:hibernate-core", version.ref = "hibernateCore" }
+log4jApi = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4jApi" }
+jbcrypt = { module = "org.mindrot:jbcrypt", version.ref = "jbcrypt" }
+materialfx = { module = "io.github.palexdev:materialfx", version.ref = "materialfx" }
+dpotjni = { module = "com.digitalpersona.onetouch:dpotjni", version.ref = "dpotjni" }
+dpotapi = { module = "com.digitalpersona.onetouch:dpotapi", version.ref = "dpotapi" }
+controlsfx = { module = "org.controlsfx:controlsfx", version.ref = "controlsfx" }
+junitJupiterEngine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitJupiterEngine" }
+junitJupiterApi = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+mockitoCore = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockitoJunitJupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }

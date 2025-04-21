@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.mfxcomponents.controls.buttons.MFXIconButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="857.0" prefWidth="1119.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.EventoController">
+   <children>
+      <Separator layoutX="105.0" layoutY="317.0" prefHeight="0.0" prefWidth="948.0" />
+      <TableView fx:id="tableEventos" layoutX="105.0" layoutY="341.0" prefHeight="380.0" prefWidth="948.0">
+        <columns>
+          <TableColumn fx:id="colFecha" prefWidth="116.0" sortType="DESCENDING" text="Fecha" />
+          <TableColumn fx:id="colEvento" prefWidth="831.0" text="Evento" />
+        </columns>
+      </TableView>
+      <VBox layoutX="105.0" layoutY="95.0" spacing="20.0">
+         <children>
+            <MFXDatePicker fx:id="calendar" prefHeight="45.0" prefWidth="412.0" promptText="Selecciona una fecha" />
+         </children>
+      </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0ec32c" height="15.0" layoutX="105.0" layoutY="735.0" stroke="TRANSPARENT" strokeType="INSIDE" width="41.0" />
+      <Text fill="WHITE" layoutX="158.0" layoutY="747.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eventos Pendientes" wrappingWidth="139.384765625" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="15.0" layoutX="105.0" layoutY="758.0" stroke="TRANSPARENT" strokeType="INSIDE" width="41.0" />
+      <Text fill="WHITE" layoutX="158.0" layoutY="770.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eventos Finalizados" wrappingWidth="139.384765625" />
+      <Text fill="WHITE" layoutX="475.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EVENTOS" textAlignment="CENTER" wrappingWidth="208.384765625">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="33.0" />
+         </font>
+      </Text>
+      <MFXTextField fx:id="lblTitulo" floatMode="ABOVE" layoutX="105.0" layoutY="193.0" prefHeight="49.0" prefWidth="412.0" promptText="Introduce el título del evento..." />
+      <ImageView fx:id="imgPhoto" fitHeight="200.0" fitWidth="300.0" layoutX="560.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/noimage.jpg" />
+         </image>
+      </ImageView>
+      <MFXButton fx:id="btnFile" layoutX="582.0" layoutY="273.0" onMouseClicked="#handleUploadImagen" prefHeight="32.0" prefWidth="156.0" text="Cargar Imagen">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </MFXButton>
+      <Separator layoutX="809.0" layoutY="65.0" orientation="VERTICAL" prefHeight="252.0" prefWidth="3.0" />
+      <MFXButton fx:id="btnGuardar" layoutX="878.0" layoutY="165.0" prefHeight="32.0" prefWidth="156.0" text="Guardar Evento">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </MFXButton>
+      <MFXIconButton fx:id="helpIcon" layoutX="1034.0" layoutY="749.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleHelpIconClick" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: blue;" />
+   </children>
+</AnchorPane>

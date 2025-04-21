@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import io.github.palexdev.mfxcomponents.controls.buttons.MFXIconButton?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<AnchorPane prefHeight="515.0" prefWidth="1016.0" styleClass="main" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.CameraController">
+   <children>
+      <BorderPane layoutX="32.0" layoutY="31.0" prefHeight="453.0" prefWidth="952.0" style="-fx-background-color: rgba(64, 70, 89, 1);" styleClass="root" stylesheets="@../CSS/styles.css">
+         <left>
+            <AnchorPane fx:id="AnchorPaneLeft" prefHeight="338.0" prefWidth="206.0" styleClass="anchor-pane" BorderPane.alignment="CENTER">
+               <children>
+                  <MFXButton fx:id="btnOn" depthLevel="LEVEL5" layoutX="53.0" layoutY="135.0" onMouseClicked="#handleOnCamera" prefHeight="40.0" prefWidth="101.0" rippleRadius="20.0" text="On">
+                     <effect>
+                        <DropShadow />
+                     </effect></MFXButton>
+                  <MFXButton fx:id="btnOff" depthLevel="LEVEL5" layoutX="51.0" layoutY="243.0" onMouseClicked="#handleOffCamera" prefHeight="40.0" prefWidth="104.0" text="Off">
+                     <effect>
+                        <DropShadow />
+                     </effect></MFXButton>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+             
+                  </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane fx:id="pnlCamera" prefHeight="379.0" prefWidth="500.0" styleClass="anchor-pane" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imgLiveCamera" fitHeight="295.0" fitWidth="399.0" layoutX="28.0" layoutY="72.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="72.0">
+                     <image>
+                        <Image url="@../images/noimage.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Ellipse fx:id="elipsePhoto" fill="TRANSPARENT" layoutX="227.0" layoutY="211.0" opacity="0.61" radiusX="93.0" radiusY="119.0" stroke="#00000023" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="5.0" styleClass="ellipse" visible="false">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Ellipse>
+                  <MFXComboBox fx:id="comboCameras" floatingText="Camaras" layoutX="29.0" layoutY="14.0" prefHeight="40.0" prefWidth="397.0" scrollOnOpen="true" selectable="true">
+                     <effect>
+                        <DropShadow />
+                     </effect></MFXComboBox>
+               </children>
+            </AnchorPane>
+         </center>
+         <right>
+            <AnchorPane prefHeight="381.0" prefWidth="293.0" styleClass="anchor-pane" stylesheets="@../CSS/styles.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Canvas fx:id="canvasPhotoCamera" height="266.0" layoutX="35.0" layoutY="37.0" width="228.0" />
+                  <MFXButton fx:id="btnSave" depthLevel="LEVEL5" layoutX="94.0" layoutY="327.0" onMouseClicked="#handleSavePhoto" prefHeight="40.0" prefWidth="112.0" text="Guardar">
+                     <effect>
+                        <DropShadow />
+                     </effect></MFXButton>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="270.0" layoutX="30.0" layoutY="28.0" stroke="#0000003f" strokeType="OUTSIDE" strokeWidth="5.0" width="239.0">
+                     <effect>
+                        <DropShadow />
+                     </effect></Rectangle>
+               </children>
+            </AnchorPane>
+         </right>
+         <bottom>
+            <AnchorPane prefHeight="72.0" prefWidth="952.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MFXButton fx:id="btnShot" depthLevel="LEVEL5" layoutX="359.0" layoutY="16.0" onMouseClicked="#handleCapturePhoto" prefHeight="40.0" prefWidth="140.0" text="Shot">
+                     <effect>
+                        <DropShadow />
+                     </effect></MFXButton>
+                  <MFXIconButton fx:id="helpIcon" layoutX="918.0" layoutY="26.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleHelpIconClick" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: blue;" />
+               </children>
+            </AnchorPane>
+         </bottom>
+         <effect>
+            <DropShadow />
+         </effect>
+      </BorderPane>
+   </children>
+</AnchorPane>

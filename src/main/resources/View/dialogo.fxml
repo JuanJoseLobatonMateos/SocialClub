@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="176.0" prefWidth="445.0" styleClass="main" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.DialogoController">
+    <children>
+      <DialogPane fx:id="dialogo" contentText="lOGIN" layoutX="15.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="143.0" prefWidth="416.0" styleClass="dialogo" stylesheets="@../CSS/styles.css" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <buttonTypes>
+            <ButtonType fx:id="button_dialogo" fx:constant="OK" />
+         </buttonTypes>
+      </DialogPane>
+    </children>
+</AnchorPane>

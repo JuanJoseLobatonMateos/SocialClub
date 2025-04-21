@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.mfxcomponents.controls.buttons.MFXIconButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1119.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.socialclub.socialclub.controller.RegistroController">
+    <MFXDatePicker fx:id="cmbCalendar" layoutX="283.0" layoutY="111.0" />
+    <Label layoutX="100.0" layoutY="118.0" text="Seleccionar Fecha" />
+    <HBox layoutX="51.0" layoutY="168.0" prefHeight="536.0" prefWidth="1018.0" spacing="20.0">
+        <children>
+            <TableView fx:id="tblEntradas" prefHeight="515.0" prefWidth="495.0">
+                <columns>
+                    <TableColumn fx:id="colHoraEntrada" prefWidth="116.0" text="Hora Entrada" />
+                    <TableColumn fx:id="colNumeroSocioEntrante" minWidth="0.0" prefWidth="90.0" text="Nº Socio" />
+                    <TableColumn fx:id="colNombreEntrante" minWidth="0.0" prefWidth="148.0" text="Nombre" />
+                    <TableColumn fx:id="colApellidosEntrante" minWidth="0.0" prefWidth="189.0" text="Apellidos" />
+                </columns>
+            </TableView>
+            <TableView fx:id="tblSalidas" prefHeight="516.0" prefWidth="498.0">
+                <columns>
+                    <TableColumn fx:id="colHoraSalida" prefWidth="116.0" text="Hora Salida" />
+                    <TableColumn fx:id="colNumeroSocioSaliente" minWidth="0.0" prefWidth="90.0" text="Nº Socio" />
+                    <TableColumn fx:id="colNombreSaliente" minWidth="0.0" prefWidth="148.0" text="Nombre" />
+                    <TableColumn fx:id="colApellidosSaliente" minWidth="0.0" prefWidth="189.0" text="Apellidos" />
+                </columns>
+            </TableView>
+        </children>
+    </HBox>
+    <MFXButton fx:id="btnReporteRegistro" layoutX="469.0" layoutY="721.0" onMouseClicked="#handleImprimirReporteRegistro" prefHeight="30.0" prefWidth="182.0" text="REPORTE REGISTRO" />
+    <Label fx:id="lblTotalSocios" layoutX="578.0" layoutY="118.0" text="Total de Socios: 0" />
+    <Label fx:id="lblSociosDentro" layoutX="873.0" layoutY="118.0" text="Socios Dentro: 0" />
+   <MFXIconButton fx:id="helpIcon" layoutX="1059.0" layoutY="741.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleHelpIconClick" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: blue;" />
+   <Text fill="WHITE" layoutX="456.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRO" textAlignment="CENTER" wrappingWidth="208.384765625">
+      <font>
+         <Font name="DejaVu Sans Mono Bold" size="33.0" />
+      </font>
+   </Text>
+</AnchorPane>
